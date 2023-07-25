@@ -9,6 +9,7 @@ import static W1D3.entity.ListNode.generateNode;
 /**
  * https://leetcode.cn/problems/linked-list-cycle-ii/
  * https://www.bilibili.com/video/BV1if4y1d7ob/
+ * https://ls8sck0zrg.feishu.cn/wiki/RrmGw6MYBikTfDkF7uyciOzAnuc
  */
 
 /**
@@ -37,6 +38,11 @@ public class LinkedListCycleII {
         System.out.println("last => " + head.next.next.next.val);
         System.out.println("loop => " + head.next.next.next.next.val);
         System.out.println("环的入口：" + getEnterPoint(head).val);
+
+        ListNode listNode = generateNode(Arrays.asList(1, 2));
+        listNode.next.next = listNode;
+        System.out.println("环的入口：" + getEnterPoint(listNode).val);
+
     }
 
     public static ListNode getEnterPoint(ListNode head) {
