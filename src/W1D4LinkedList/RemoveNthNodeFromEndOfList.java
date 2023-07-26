@@ -1,10 +1,10 @@
-package W1D4;
+package W1D4LinkedList;
 
 
-import W1D3.entity.ListNode;
+import common.ListNode;
 
-import static W1D3.entity.ListNode.generateNode;
-import static W1D3.entity.ListNode.printList;
+import static common.ListNode.generateNode;
+import static common.ListNode.printList;
 
 /**
  * https://www.bilibili.com/video/BV1vW4y1U7Gf/

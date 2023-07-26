@@ -1,7 +1,7 @@
-package W1D3;
+package W1D3LinkedList;
 
 
-import W1D3.entity.ListNode;
+import common.ListNode;
 
 public class DesignLinkedList {
     public static void main(String[] args) {

@@ -1,10 +1,10 @@
-package W1D4;
+package W1D4LinkedList;
 
-import W1D3.entity.ListNode;
+import common.ListNode;
 
 import java.util.Arrays;
 
-import static W1D3.entity.ListNode.generateNode;
+import static common.ListNode.generateNode;
 
 /**
  * https://leetcode.cn/problems/linked-list-cycle-ii/

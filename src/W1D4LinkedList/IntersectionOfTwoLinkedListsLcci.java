@@ -1,14 +1,14 @@
-package W1D4;
+package W1D4LinkedList;
 
 /**
  * https://leetcode.cn/problems/intersection-of-two-linked-lists-lcci/
  */
 
-import W1D3.entity.ListNode;
+import common.ListNode;
 
 import java.util.Arrays;
 
-import static W1D3.entity.ListNode.generateNode;
+import static common.ListNode.generateNode;
 
 /**
  * * https://programmercarl.com/%E9%9D%A2%E8%AF%95%E9%A2%9802.07.%E9%93%BE%E8%A1%A8%E7%9B%B8%E4%BA%A4.html

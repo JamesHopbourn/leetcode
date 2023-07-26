@@ -1,9 +1,9 @@
-package W1D3;
+package W1D3LinkedList;
 
 
-import W1D3.entity.ListNode;
+import common.ListNode;
 
-import static W1D3.entity.ListNode.printList;
+import static common.ListNode.printList;
 
 public class ReverseLinkedListAgain {
     public static void main(String[] args) {

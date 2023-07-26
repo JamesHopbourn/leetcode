@@ -1,7 +1,7 @@
-package W1D3;
+package W1D3LinkedList;
 
 
-import W1D3.entity.ListNode;
+import common.ListNode;
 
 /**
  * https://www.bilibili.com/video/BV18B4y1s7R9/

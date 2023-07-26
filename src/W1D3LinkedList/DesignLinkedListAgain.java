@@ -1,6 +1,6 @@
-package W1D3;
+package W1D3LinkedList;
 
-import W1D3.entity.ListNode;
+import common.ListNode;
 
 /**
  * https://leetcode.cn/problems/design-linked-list/

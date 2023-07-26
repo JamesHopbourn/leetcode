@@ -1,4 +1,4 @@
-package W1D3.entity;
+package common;
 
 import java.util.List;
 

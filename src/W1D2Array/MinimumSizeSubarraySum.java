@@ -1,4 +1,4 @@
-package W1D2;
+package W1D2Array;
 
 
 import static java.lang.Math.min;
