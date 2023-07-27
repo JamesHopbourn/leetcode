@@ -19,19 +19,26 @@ public class EvaluateReversePolishNotation {
     public static int evalRPN(String[] tokens) {
         List<String> operation = new ArrayList<>(Arrays.asList("+", "-", "*", "/"));
         Stack<String> stack = new Stack<>();
-        for (int i = 0; i < tokens.length; i++) {
-            String token = tokens[i];
-            if (!operation.contains(token)){
-                 stack.add(token);
+        for (String token : tokens) {
+            if (!operation.contains(token)) {
+                stack.add(token);
             } else {
                 int num1 = Integer.parseInt(stack.pop());
                 int num2 = Integer.parseInt(stack.pop());
                 int result = 0;
-                switch (token){
-                    case "+": result = num2 + num1; break;
-                    case "-": result = num2 - num1; break;
-                    case "*": result = num2 * num1; break;
-                    case "/": result = num2 / num1; break;
+                switch (token) {
+                    case "+":
+                        result = num2 + num1;
+                        break;
+                    case "-":
+                        result = num2 - num1;
+                        break;
+                    case "*":
+                        result = num2 * num1;
+                        break;
+                    case "/":
+                        result = num2 / num1;
+                        break;
                 }
                 stack.push(String.valueOf(result));
             }
