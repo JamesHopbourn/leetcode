@@ -1,7 +1,15 @@
-package W2D4;
+package W2D4Stack;
 
 import java.util.Stack;
 
+/**
+ * https://www.bilibili.com/video/BV1AF411w78g/
+ * 
+ * https://leetcode.cn/problems/valid-parentheses/
+ * https://leetcode.cn/problems/valid-parentheses/solution/valid-parentheses-fu-zhu-zhan-fa-by-jin407891080/
+ *
+ * https://ls8sck0zrg.feishu.cn/wiki/JewPweUFPiGNG5kFr3ZcWmgHnkg
+ */
 public class ValidParentheses {
     public static void main(String[] args) {
         System.out.println(isValid("()"));
