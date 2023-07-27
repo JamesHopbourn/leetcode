@@ -1,21 +1,17 @@
 package W2D1String;
 
+import common.PrintUtil;
+
 /**
  * https://leetcode.cn/problems/reverse-string/
  */
 public class ReverseString {
     public static void main(String[] args) {
         char[] chars = reverseString(new char[]{'J', 'a', 'm', 'e', 's'});
-        for (int i = 0; i < chars.length; i++) {
-            System.out.print(chars[i] + " ");
-        }
+        PrintUtil.printCharArray(chars);
 
-        System.out.println();
-        
         char[] result = function(new char[]{'J', 'a', 'm', 'e', 's'});
-        for (int i = 0; i < result.length; i++) {
-            System.out.print(result[i] + " ");
-        }
+        PrintUtil.printCharArray(result);
     }
 
     public static char[] function(char[] chars){
