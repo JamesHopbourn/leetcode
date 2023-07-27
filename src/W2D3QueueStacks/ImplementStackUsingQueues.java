@@ -6,7 +6,7 @@ import java.util.Queue;
 /**
  * https://leetcode.cn/problems/implement-stack-using-queues/ <p>
  * https://www.bilibili.com/video/BV1nY4y1w7VC/ <p>
- *
+ * <p>
  * https://www.liaoxuefeng.com/wiki/1252599548343744/1265121791832960 <p>
  * https://leetcode.cn/problems/implement-stack-using-queues/solution/yong-dui-lie-shi-xian-zhan-by-leetcode-solution/ <p>
  */
@@ -28,13 +28,15 @@ public class ImplementStackUsingQueues {
         Queue<Integer> queue;
 
         public MyStack() {
+            // 注意这里的类型是 LinkedList
             queue = new LinkedList<Integer>();
         }
 
         public void push(int x) {
+            // 注意这里保存的是 size，而不是 size-1
             int size = queue.size();
             queue.offer(x);
-            for(int i=0;i<size;i++){
+            for (int i = 0; i < size; i++) {
                 queue.offer(queue.poll());
             }
         }
