@@ -20,7 +20,30 @@ public class FindTheIndexOfTheFirstOccurrenceInAString {
     }
 
     public static int strStr(String haystack, String needle) {
-        return 0;
+        if (needle.length() == 0) {
+            return 0;
+        }
+
+        int[] next = new int[needle.length()];
+        getNext(next, needle);
+
+        int j = 0;
+        for (int i = 0; i < haystack.length(); i++) {
+            // 注意这里是 needle.charAt(j) != haystack.charAt(i)
+            while (j > 0 && needle.charAt(j) != haystack.charAt(i)) {
+                // 回溯
+                j = next[j - 1];
+            }
+            // 注意这里是 needle.charAt(j) == haystack.charAt(i)
+            if (needle.charAt(j) == haystack.charAt(i)) {
+                // 增加
+                j++;
+            }
+            if (j == needle.length()) {
+                return i - needle.length() + 1;
+            }
+        }
+        return -1;
     }
 
     public static int[] getNext(int[] next, String string) {
@@ -39,6 +62,31 @@ public class FindTheIndexOfTheFirstOccurrenceInAString {
                 j++;
             }
             // 将j（前缀的长度）赋给next[i]
+            next[i] = j;
+        }
+        return next;
+    }
+
+    /**
+     * 3,1,3
+     *
+     * @param next
+     * @param s
+     * @return
+     */
+    public static int[] func(int[] next, String s) {
+        int j = 0;
+        next[0] = j;
+        char[] chars = s.toCharArray();
+        for (int i = 1; i < chars.length; i++) {
+            // j 回溯
+            while (j > 0 && next[i] != next[j]) {
+                j = next[j - 1];
+            }
+            // if 判断相等
+            if (next[i] == next[j]) {
+                j++;
+            }
             next[i] = j;
         }
         return next;
