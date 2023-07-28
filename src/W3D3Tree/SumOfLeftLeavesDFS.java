@@ -8,17 +8,11 @@ import common.TreeNode;
  */
 public class SumOfLeftLeavesDFS {
     public static void main(String[] args) {
-        TreeNode tree = TreeNode.createTree(new Integer[]{1});
-        System.out.println("sumOfLeftLeaves(tree) = " + sumOfLeftLeaves(tree));
-
-        TreeNode tree1 = TreeNode.createTree(new Integer[]{1, 2, 3, 4, 5});
-        System.out.println("sumOfLeftLeaves(tree1) = " + sumOfLeftLeaves(tree1));
-
-        TreeNode treeNode = TreeNode.createTree(new Integer[]{1});
-        System.out.println("sumOfLeftLeaves(tree) = " + sumOfLeftLeaves(treeNode));
-
-        TreeNode treeNode1 = TreeNode.createTree(new Integer[]{1, 2, 3, 4, 5});
-        System.out.println("sumOfLeftLeaves(tree1) = " + sumOfLeftLeaves(treeNode1));
+        System.out.println(sumOfLeftLeaves(TreeNode.createTree(new Integer[]{1})) == 0);
+        System.out.println(sumOfLeftLeaves(TreeNode.createTree(new Integer[]{1, 2, 3})) == 2);
+        System.out.println(sumOfLeftLeaves(TreeNode.createTree(new Integer[]{1, 2, 3, 4, 5})) == 4);
+        System.out.println(sumOfLeftLeaves(TreeNode.createTree(new Integer[]{1, 2, 3, 4, 5, 6})) == 10);
+        System.out.println(sumOfLeftLeaves(TreeNode.createTree(new Integer[]{3, 9, 20, null, null, 15, 7})) == 24);
     }
 
     public static int sumOfLeftLeaves(TreeNode root) {
