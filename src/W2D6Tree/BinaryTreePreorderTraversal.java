@@ -22,12 +22,10 @@ public class BinaryTreePreorderTraversal {
     }
 
     public static void preorder(TreeNode root, List<Integer> res) {
-        if (root == null) {
-            return;
+        if (root != null) {
+            res.add(root.val);
+            preorder(root.left, res);
+            preorder(root.right, res);
         }
-        res.add(root.val);
-        preorder(root.left, res);
-        preorder(root.right, res);
     }
-
 }

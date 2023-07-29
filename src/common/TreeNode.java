@@ -143,4 +143,28 @@ public class TreeNode {
             System.out.println(sb.toString());
         }
     }
+
+    public static void preorderTraversal(TreeNode root){
+        if (root != null){
+            System.out.print(root.val+ " ");
+            preorderTraversal(root.left);
+            preorderTraversal(root.right);
+        }
+    }
+
+    public static void inorderTraversal(TreeNode root){
+        if (root != null){
+            preorderTraversal(root.left);
+            System.out.print(root.val+ " ");
+            preorderTraversal(root.right);
+        }
+    }
+
+    public static void postorderTraversal(TreeNode root){
+        if (root != null){
+            preorderTraversal(root.left);
+            preorderTraversal(root.right);
+            System.out.print(root.val+ " ");
+        }
+    }
 }

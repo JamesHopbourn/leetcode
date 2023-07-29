@@ -17,11 +17,10 @@ public class BinaryTreePostorderTraversal {
     }
 
     public static void postorder(TreeNode root, List<Integer> res) {
-        if (root == null) {
-            return;
+        if (root != null) {
+            postorder(root.left, res);
+            postorder(root.right, res);
+            res.add(root.val);
         }
-        postorder(root.left, res);
-        postorder(root.right, res);
-        res.add(root.val);
     }
 }

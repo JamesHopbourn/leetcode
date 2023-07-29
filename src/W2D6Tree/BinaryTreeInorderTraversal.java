@@ -17,12 +17,10 @@ public class BinaryTreeInorderTraversal {
     }
 
     public static void inorder(TreeNode root, List<Integer> res) {
-        if (root == null) {
-            return;
+        if (root != null) {
+            inorder(root.left, res);
+            res.add(root.val);
+            inorder(root.right, res);
         }
-        inorder(root.left, res);
-        res.add(root.val);
-
-        inorder(root.right, res);
     }
 }
