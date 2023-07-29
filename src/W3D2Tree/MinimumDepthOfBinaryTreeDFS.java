@@ -2,7 +2,7 @@ package W3D2Tree;
 
 import common.TreeNode;
 
-public class MinimumDepthOfBinaryTreeRecursion {
+public class MinimumDepthOfBinaryTreeDFS {
     public static void main(String[] args) {
         TreeNode tree = TreeNode.createTree(new Integer[]{3, 9, 20, null, null, 15, 7});
         System.out.println(minDepth(tree));
