@@ -2,7 +2,7 @@ package W3D2Tree;
 
 import common.TreeNode;
 
-public class MaximumDepthOfBinaryTreeRecursion {
+public class MaximumDepthOfBinaryTreeDFS {
     public static void main(String[] args) {
         System.out.println(maxDepth(TreeNode.createTree(new Integer[]{3, 9, 20, null, null, 15, 7})));
     }
