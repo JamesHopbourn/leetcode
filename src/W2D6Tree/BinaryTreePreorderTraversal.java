@@ -12,8 +12,7 @@ import java.util.List;
  */
 public class BinaryTreePreorderTraversal {
     public static void main(String[] args) {
-        TreeNode createTree = TreeNode.createTree(new Integer[]{1, 2, 3, 4, 5, 6, 7, 8, 9});
-        System.out.println(preorderTraversal(createTree));
+        System.out.println(preorderTraversal(TreeNode.createTree(7)));
     }
 
     public static List<Integer> preorderTraversal(TreeNode root) {
