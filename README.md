@@ -1,0 +1,13 @@
+- W2D6Tree：树的遍历
+- W3D1Tree：反转树
+- W3D2Tree
+  - 最大深度：DFS
+  - 最小深度：DFS
+  - 完全二叉树节点个数：BFS
+- W3D3Tree
+  - 计算树左叶子之和：BFS 使用一个 Queue 处理，但是区分是父节点还是叶子节点
+- W3D4Tree
+  - 找到最左边的叶子：BFS，但是要把左右叶子节点处理顺序调换一下
+  - 求路径和：BFS 使用两个 Queue 处理
+- W3D5Tree
+  - 合并两棵树：BFS 使用三个 Queue 处理
