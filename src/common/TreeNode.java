@@ -16,12 +16,6 @@ public class TreeNode {
         this.val = val;
     }
 
-    public TreeNode(int val, TreeNode left, TreeNode right) {
-        this.val = val;
-        this.left = left;
-        this.right = right;
-    }
-
     public static TreeNode createTree(int N){
         // 根据 N 的大小直接创建对应长度的数字数组
         Integer[] array = IntStream.range(0, N).mapToObj(i -> i + 1).toArray(Integer[]::new);
