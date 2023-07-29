@@ -32,17 +32,17 @@ public class NumberOfIslands {
         return islandNum;
     }
 
-    public static void dfs(int[][] grid, int r, int c) {
-        if (r < 0 || r >= grid.length || c < 0 || c >= grid[0].length) {
+    public static void dfs(int[][] grid, int i, int j) {
+        if (i < 0 || i >= grid.length || j < 0 || j >= grid[0].length) {
             return;
         }
-        if (grid[r][c] == 0) {
+        if (grid[i][j] == 0) {
             return;
         }
-        grid[r][c] = 0;
-        dfs(grid, r - 1, c);
-        dfs(grid, r + 1, c);
-        dfs(grid, r, c + 1);
-        dfs(grid, r, c - 1);
+        grid[i][j] = 0;
+        dfs(grid, i - 1, j);
+        dfs(grid, i + 1, j);
+        dfs(grid, i, j + 1);
+        dfs(grid, i, j - 1);
     }
 }
