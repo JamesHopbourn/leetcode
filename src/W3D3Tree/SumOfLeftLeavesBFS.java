@@ -11,15 +11,36 @@ import java.util.Queue;
  */
 public class SumOfLeftLeavesBFS {
     public static void main(String[] args) {
-        System.out.println(sumOfLeftLeaves(TreeNode.createTree(new Integer[]{1})) == 0);
-        System.out.println(sumOfLeftLeaves(TreeNode.createTree(new Integer[]{1, 2, 3})) == 2);
-        System.out.println(sumOfLeftLeaves(TreeNode.createTree(new Integer[]{1, 2, 3, 4, 5})) == 4);
-        System.out.println(sumOfLeftLeaves(TreeNode.createTree(new Integer[]{1, 2, 3, 4, 5, 6})) == 10);
-        System.out.println(sumOfLeftLeaves(TreeNode.createTree(new Integer[]{3, 9, 20, null, null, 15, 7})) == 24);
+        System.out.println(sum(TreeNode.createTree(new Integer[]{1})) == 0);
+        System.out.println(sum(TreeNode.createTree(new Integer[]{1, 2, 3})) == 2);
+        System.out.println(sum(TreeNode.createTree(new Integer[]{1, 2, 3, 4, 5})) == 4);
+        System.out.println(sum(TreeNode.createTree(new Integer[]{1, 2, 3, 4, 5, 6})) == 10);
+        System.out.println(sum(TreeNode.createTree(new Integer[]{3, 9, 20, null, null, 15, 7})) == 24);
     }
 
     public static boolean isLeafNode(TreeNode node) {
         return node.left == null && node.right == null;
+    }
+
+    public static int sum(TreeNode root){
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.add(root);
+        int sum = 0;
+
+        while (!queue.isEmpty()){
+            TreeNode node = queue.poll();
+            if (node.left != null){
+                if (isLeafNode(node.left)){
+                    sum += node.left.val;
+                } else {
+                    queue.add(node.left);
+                }
+            }
+            if (node.right != null && !isLeafNode(node.right)){
+                queue.add(node.right);
+            }
+        }
+        return sum;
     }
 
     /**
