@@ -48,15 +48,4 @@ public class SumOfLeftLeavesBFS {
         }
         return sum;
     }
-
-    public static int dfs(TreeNode node) {
-        int sum = 0;
-        if (node.left != null) {
-            sum += isLeafNode(node.left) ? node.left.val : dfs(node.left);
-        }
-        if (node.right != null) {
-            sum += dfs(node.right);
-        }
-        return sum;
-    }
 }
