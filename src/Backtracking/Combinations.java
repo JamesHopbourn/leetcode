@@ -6,18 +6,18 @@ import java.util.List;
 
 public class Combinations {
     public static void main(String[] args) {
-        System.out.println(combine(4, 2));
+        System.out.println(new Combinations().combine(3, 2));
     }
 
-    static List<List<Integer>> result = new ArrayList<>();
-    static LinkedList<Integer> path = new LinkedList<>();
+    List<List<Integer>> result = new ArrayList<>();
+    LinkedList<Integer> path = new LinkedList<>();
 
-    public static List<List<Integer>> combine(int n, int k) {
-        backtracking(n, k, 1);
+    List<List<Integer>> combine(int n, int k) {
+        backtracking(1, n, k);
         return result;
     }
 
-    public static void backtracking(int n, int k, int startIndex) {
+    void backtracking(int startIndex, int n, int k) {
         // 终止条件
         if (path.size() == k) {
             // 存放结果
@@ -28,7 +28,7 @@ public class Combinations {
             // 处理节点
             path.add(i);
             // 递归
-            backtracking(n, k, i + 1);
+            backtracking(i + 1, n, k);
             // 回溯
             path.removeLast();
         }
