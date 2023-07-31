@@ -4,7 +4,7 @@
 ```java
 public static int function(int[][] grid) {
     if (grid == null) {
-    return 0;
+        return 0;
     }
     int variable = 0;
     for (int i = 0; i < grid.length; i++) {
