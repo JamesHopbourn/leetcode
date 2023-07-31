@@ -17,3 +17,10 @@
 - [labuladong 的算法小抄](https://labuladong.github.io/algo/home/)
 - [代码随想录](https://programmercarl.com/)
 - [【labuladong】回溯算法核心套路详解_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV1P5411N7Xc/)  
+
+#### 提高效率
+- IDEA 的对比功能配和 git checkout . 可以很好地帮助对比算法题中哪里写错了
+- markdown
+- javadoc
+- gaa gcsm gcn!
+- IDEA 快捷键、列选择、单词选择、创建函数
