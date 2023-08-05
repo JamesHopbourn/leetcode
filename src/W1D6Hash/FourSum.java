@@ -11,6 +11,6 @@ package W1D6Hash;
  */
 public class FourSum {
     public static void main(String[] args) {
-
+        
     }
 }
