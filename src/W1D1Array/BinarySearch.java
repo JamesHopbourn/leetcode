@@ -28,4 +28,26 @@ public class BinarySearch {
         }
         return -1;
     }
+
+    public static int function(int[] nums, int target) {
+        int left = 0;
+        // 使用左闭右闭需要对 length -1
+        int right = nums.length - 1;
+        // [1,1] 闭区间的 1 能不能等于开区间的 1？
+        // 可以，既然可以就使用 <=
+        while (left <= right) {
+            int mid = (left + right) / 2;
+            if (nums[mid] > target) {
+                // 右区间因为有闭合，所以需要 -1 向前一位
+                right = mid - 1;
+            } else if (nums[mid] < target) {
+                // 左区间因为有闭合，所以需要 +1 向后一位
+                left = mid + 1;
+            } else {
+                // 返回的是下标位置
+                return mid;
+            }
+        }
+        return -1;
+    }
 }
