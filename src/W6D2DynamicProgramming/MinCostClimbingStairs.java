@@ -1,4 +1,4 @@
-package W6D2;
+package W6D2DynamicProgramming;
 
 public class MinCostClimbingStairs {
     public static void main(String[] args) {
