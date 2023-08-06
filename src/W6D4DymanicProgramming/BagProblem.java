@@ -46,7 +46,6 @@ public class BagProblem {
             }
             System.out.println();
         }
-
         System.out.println(dp[weight.length-1][bagSize]);
     }
 
