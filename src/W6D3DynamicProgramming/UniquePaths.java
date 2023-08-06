@@ -7,15 +7,15 @@ package W6D3DynamicProgramming;
  */
 public class UniquePaths {
     public static void main(String[] args) {
-        System.out.println(uniquePaths(2, 4));
-        System.out.println(uniquePaths(3, 2));
+        System.out.println(uniquePaths(2, 4) == 4);
+        System.out.println(uniquePaths(3, 2) == 3);
     }
 
     public static int uniquePaths(int m, int n) {
         int[][] dp = new int[m][n];
         // 竖向全部初始化为 1
         for (int i = 0; i < m; i++) {
-            dp[i][0] = 1;
+            dp[i][0] = 1;              
         }
         // 横向全部初始化为 1
         for (int j = 0; j < n; j++) {
