@@ -8,11 +8,11 @@ public class ClimbingStairs {
 
     public static int climbStairs(int n) {
         // 特殊情况处理
-        if (n<=2) {
+        if (n <= 2) {
             return n;
         }
         // 定义一个数组存储 dp 转移结果
-        int[] dp = new int[n+1];
+        int[] dp = new int[n + 1];
         // 初始化 dp
         dp[1] = 1;
         dp[2] = 2;
