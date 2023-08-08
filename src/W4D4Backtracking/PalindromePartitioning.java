@@ -21,7 +21,7 @@ public class PalindromePartitioning {
         backtracking(s, 0);
         return result;
     }
-
+    
     public void backtracking(String s, int startIndex) {
         // 如果分割线位置大等于 s 长度收集结果
         // 为什么不做回文串判断，因为下面的 continue 处理了不是回文串的情况
