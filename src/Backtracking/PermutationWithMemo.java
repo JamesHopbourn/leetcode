@@ -15,10 +15,9 @@ public class PermutationWithMemo {
     }
 
     List<List<Integer>> result = new ArrayList<>();
+    LinkedList<Integer> track = new LinkedList<>();
 
     List<List<Integer>> permute(int[] nums) {
-        // 使用 LinkedList<Integer> 而不是 List<Integer>
-        LinkedList<Integer> track = new LinkedList<>();
         boolean[] used = new boolean[nums.length];
         backtracking(nums, track, used);
         return result;

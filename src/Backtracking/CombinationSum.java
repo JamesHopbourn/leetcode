@@ -16,7 +16,7 @@ public class CombinationSum {
     }
 
     List<List<Integer>> result = new ArrayList<>();
-    List<Integer> path = new LinkedList<>();
+    LinkedList<Integer> path = new LinkedList<>();
 
     public List<List<Integer>> combinationSum(int[] candidates, int target) {
         // 1. 先进行排序
@@ -39,8 +39,8 @@ public class CombinationSum {
             path.add(candidates[i]);
             // 4. 注意最后的的起始索引是 i 而不是 index，否则就死循环了
             backtracking(candidates, target, sum + candidates[i], i);
-            // 5. 此处回溯移除元素要使用 path.size() - 1，不能使用 remove(candidates[i])
-            path.remove(path.size() - 1);
+            // 5. 使用 LinkedList 直接删除最后一个元素
+            path.removeLast();
         }
     }
 }

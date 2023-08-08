@@ -15,10 +15,9 @@ public class Permutations {
     }
 
     List<List<Integer>> result = new ArrayList<>();
+    LinkedList<Integer> track = new LinkedList<>();
 
     List<List<Integer>> permute(int[] nums) {
-        LinkedList<Integer> track = new LinkedList<>();
-        // 使用 LinkedList<Integer> 而不是 List<Integer>
         backtracking(nums, track);
         return result;
     }
@@ -29,11 +28,11 @@ public class Permutations {
             result.add(new LinkedList<>(track));
             return;
         }
-        for (int num : nums) {
-            if (track.contains(num)) {
+        for (int i = 0; i < nums.length; i++) {
+            if (track.contains(nums[i])) {
                 continue;
             }
-            track.add(num);
+            track.add(nums[i]);
             backtracking(nums, track);
             track.removeLast();
         }

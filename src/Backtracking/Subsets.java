@@ -1,6 +1,7 @@
 package Backtracking;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 public class Subsets {
@@ -9,19 +10,20 @@ public class Subsets {
     }
 
     List<List<Integer>> result = new ArrayList<>();
-    ArrayList<Integer> path = new ArrayList<>();
+    LinkedList<Integer> path = new LinkedList<>();
 
     public List<List<Integer>> subsets(int[] nums) {
-        backtrack(0, nums);
+        backtracking(0, nums);
         return result;
     }
 
-    private void backtrack(int i, int[] nums) {
+    public void backtracking(int i, int[] nums) {
+        // 因为是求子集，没有元素个数的要求，在任何一次回溯过程中都要收集
         result.add(new ArrayList<>(path));
         for (int j = i; j < nums.length; j++) {
             path.add(nums[j]);
-            backtrack(j + 1, nums);
-            path.remove(path.size() - 1);
+            backtracking(j + 1, nums);
+            path.removeLast();
         }
     }
 }
