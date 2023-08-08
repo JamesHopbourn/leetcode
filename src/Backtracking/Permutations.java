@@ -17,19 +17,18 @@ public class Permutations {
     List<List<Integer>> result = new ArrayList<>();
     LinkedList<Integer> track = new LinkedList<>();
 
-    List<List<Integer>> permute(int[] nums) {
+    public List<List<Integer>> permute(int[] nums) {
         backtracking(nums, track);
         return result;
     }
 
-    void backtracking(int[] nums, LinkedList<Integer> track) {
-        if (track.size() == nums.length) {
-            // 注意这里要 new LinkedList<>(track) 而不能直接 add(track)
-            result.add(new LinkedList<>(track));
+    public void backtracking(int[] nums, LinkedList<Integer> track) {
+        if (track.size() == nums.length){
+            result.add(new ArrayList<>(track));
             return;
         }
         for (int i = 0; i < nums.length; i++) {
-            if (track.contains(nums[i])) {
+            if (track.contains(nums[i])){
                 continue;
             }
             track.add(nums[i]);

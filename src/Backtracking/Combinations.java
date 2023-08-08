@@ -25,12 +25,10 @@ public class Combinations {
             return;
         }
         for (int i = startIndex; i <= n; i++) {
-            // 处理节点
             path.add(i);
-            // 递归
-            backtracking(i + 1, n, k);
-            // 回溯
+            backtracking(i+1, n, k);
             path.removeLast();
+
         }
     }
 }
