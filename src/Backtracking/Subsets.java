@@ -17,12 +17,12 @@ public class Subsets {
         return result;
     }
 
-    public void backtracking(int i, int[] nums) {
+    public void backtracking(int startIndex, int[] nums) {
         // 因为是求子集，没有元素个数的要求，在任何一次回溯过程中都要收集
         result.add(new ArrayList<>(path));
-        for (int j = i; j < nums.length; j++) {
-            path.add(nums[j]);
-            backtracking(j + 1, nums);
+        for (int i = startIndex; i < nums.length; i++) {
+            path.add(nums[i]);
+            backtracking(i + 1, nums);
             path.removeLast();
         }
     }
