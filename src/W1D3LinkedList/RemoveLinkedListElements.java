@@ -42,18 +42,5 @@ public class RemoveLinkedListElements {
         return dummy.next;
     }
 
-    public static ListNode function(ListNode head, int target){
-        while (head != null && head.val() == target){
-            head = head.next;
-        }
-        ListNode curr = head;
-        while (curr != null && curr.next != null){
-            if (curr.next.val() == target){
-                curr.next = curr.next.next;
-            } else {
-                curr = curr.next;
-            }
-        }
-        return head;
-    }
+
 }

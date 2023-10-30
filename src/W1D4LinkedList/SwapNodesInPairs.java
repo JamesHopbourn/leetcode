@@ -18,23 +18,8 @@ public class SwapNodesInPairs {
             curr = curr.next;
         }
         printList(head);
-//        ListNode node = function(head);
         ListNode node = func(head);
         printList(node);
-    }
-
-    public static ListNode function(ListNode head){
-        // base case 退出提交
-        if(head == null || head.next == null) return head;
-        // 获取当前节点的下一个节点
-        ListNode next = head.next;
-        // 进行递归
-        ListNode newNode = function(next.next);
-        // 这里进行交换
-        next.next = head;
-        head.next = newNode;
-
-        return next;
     }
 
     public static ListNode func(ListNode head){
