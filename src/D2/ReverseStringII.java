@@ -7,16 +7,17 @@ public class ReverseStringII {
 
     public static String reverseStr(String s, int k) {
         char[] chars = s.toCharArray();
-        for (int i = 0; i < chars.length; i += 2 * k) {
+        for (int i = 0; i < chars.length; i += 2*k) {
             int start = i;
-            int end = Math.min(s.length() - 1, i + k - 1);
+            int end = Math.min(chars.length-1, i+k-1);
             while (start < end){
-                char temp = chars[end];
-                chars[end]  = chars[start];
-                chars[start] = temp;
+                char temp = chars[start];
+                chars[start] = chars[end];
+                chars[end] = temp;
                 start++;
                 end--;
             }
+
         }
         return new String(chars);
     }

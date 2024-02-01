@@ -2,7 +2,7 @@ package D1;
 
 public class SpiralMatrixII {
     public static void main(String[] args) {
-        int[][] matrix = generateMatrix(3);
+        int[][] matrix = generateMatrix(10);
         for (int[] row : matrix) {
             for (int num : row) {
                 System.out.print(num + " ");

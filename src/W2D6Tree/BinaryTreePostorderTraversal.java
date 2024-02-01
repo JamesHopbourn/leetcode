@@ -11,7 +11,7 @@ public class BinaryTreePostorderTraversal {
     }
 
     public static List<Integer> postorderTraversal(TreeNode root) {
-        List<Integer> res = new ArrayList<Integer>();
+        List<Integer> res = new ArrayList<>();
         postorder(root, res);
         return res;
     }

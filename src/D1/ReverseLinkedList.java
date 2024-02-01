@@ -5,7 +5,8 @@ import common.ListNode;
 public class ReverseLinkedList {
     public static void main(String[] args) {
         ListNode listNode = ListNode.generateNode(10);
-        ListNode listNode1 = reverseList(listNode);
+        ListNode.printList(reverseList(listNode));
+
     }
 
     public static ListNode reverseList(ListNode head) {

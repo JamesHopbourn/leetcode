@@ -4,8 +4,8 @@ import common.ListNode;
 
 public class RemoveNthNodeFromEndOfList {
     public static void main(String[] args) {
-        ListNode listNode = ListNode.generateNode(10);
-        ListNode result = removeNthFromEnd(listNode, 4);
+        ListNode listNode = ListNode.generateNode(5);
+        ListNode result = removeNthFromEnd(listNode, 2);
         ListNode.printList(result);
     }
 
@@ -13,10 +13,11 @@ public class RemoveNthNodeFromEndOfList {
         ListNode dummyNode = new ListNode(-1, head);
         ListNode fast = dummyNode;
         ListNode slow = dummyNode;
-        for (int i = 0; i <=n ; i++) {
+
+        for (int i = 0; i <= n; i++) {
             fast = fast.next;
         }
-        while (fast.next != null){
+        while (fast != null){
             fast = fast.next;
             slow = slow.next;
         }

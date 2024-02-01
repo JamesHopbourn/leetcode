@@ -22,9 +22,9 @@ public class RemoveLinkedListElements {
         ListNode dummyHead = new ListNode(-1, head);
         ListNode prev = dummyHead;
         while (prev.next != null){
-            if (prev.next.val == val){
+            if (val == prev.next.val){
                 prev.next = prev.next.next;
-            } else{
+            } else {
                 prev = prev.next;
             }
         }

@@ -19,16 +19,36 @@ public class DetectCycle {
     }
 
     public static boolean detectCycle(ListNode head) {
-        ListNode slow = head;
         ListNode fast = head;
+        ListNode slow = head;
         while (fast != null && fast.next != null){
             slow = slow.next;
-            fast =fast.next.next;
+            fast = fast.next.next;
             if (slow == fast){
                 return true;
             }
         }
         return false;
     }
+
+
+    /**
+     ListNode slow = head;
+     ListNode fast = head;
+     while (fast != null && fast.next != null){
+     slow = slow.next;
+     fast = fast.next.next;
+     if (slow == fast){
+     ListNode pointA = fast;
+     ListNode pointB = head;
+     while (pointB != pointA){
+     pointA = pointA.next;
+     pointB = pointB.next;
+     }
+     return pointA;
+     }
+     }
+     return null;
+     */
 
 }

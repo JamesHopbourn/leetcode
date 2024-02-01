@@ -6,20 +6,24 @@ public class MinimumSizeSubarraySum {
         System.out.println(minSubArrayLen(7, nums) == 2);
     }
 
-    public static int minSubArrayLen(int target, int[] nums) {
-        // 滑动窗口
-        int left = 0;
-        int sum = 0;
+    public static int minSubArrayLen(int target, int[] nums){
+        int sum = 0, left = 0, right = 0;
         int result = Integer.MAX_VALUE;
-        for (int right = 0; right < nums.length; right++) {
+        for (;right < nums.length; right++) {
             sum += nums[right];
-            while (sum >= target) {
-                result = Math.min(result, right - left + 1);
-                sum -= nums[left++];
+            // 当窗口内元素和大于等于目标值时，尝试缩小窗口
+            while(sum >= target){
+                // 计算当前窗口长度
+                int len = right - left + 1;
+                // 更新最短子数组长度
+                result = Math.min(result, len);
+                // 尝试缩小窗口，移动左指针，减去左边界的元素
+                sum -= nums[left];
+                // 左指针右移
+                left++;
             }
         }
         return result == Integer.MAX_VALUE ? 0 : result;
-
     }
 
 }

@@ -17,23 +17,23 @@ public class ValidParentheses {
         if (chars.length % 2 == 1) {
             return false;
         }
-        Stack<Character> strings = new Stack<>();
-        for (char aChar : s.toCharArray()) {
+        Stack<Character> stack = new Stack<>();
+        for (char aChar : chars) {
             if (aChar == '{') {
-                strings.push('}');
-            } else if (aChar == '[') {
-                strings.push(']');
+                stack.push('}');
             } else if (aChar == '(') {
-                strings.push(')');
+                stack.push(')');
+            } else if (aChar == '[') {
+                stack.push(']');
             } else {
-                if (strings.isEmpty() || strings.pop() != aChar) {
+                if (stack.isEmpty() || stack.peek() != aChar) {
                     return false;
                 } else {
-                    strings.pop();
+                    stack.pop();
                 }
             }
         }
-        return strings.isEmpty();
+        return stack.isEmpty();
     }
 
 }

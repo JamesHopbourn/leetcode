@@ -1,7 +1,6 @@
 package D2;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class IntersectionOfTwoArrays {
     public static void main(String[] args) {
@@ -18,13 +17,11 @@ public class IntersectionOfTwoArrays {
         for (int i : nums2) {hash2[i]++;}
         List<Integer> integers = new ArrayList<>();
         for (int i = 0; i < hash1.length; i++) {
-            if (hash1[i] > 0 && hash2[i] > 0){integers.add(i);}
+            if (hash1[i] > 0 && hash2[i] >0){integers.add(i);}
         }
-        int index= 0 ;
         int[] result = new int[integers.size()];
-        for (int integer : integers) {
-            result[index++] = integer;
-        }
+        int index = 0;
+        for (int i : integers) {result[index++] = i;}
         return result;
     }
 }

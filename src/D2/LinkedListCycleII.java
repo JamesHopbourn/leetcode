@@ -24,13 +24,14 @@ public class LinkedListCycleII {
     private static ListNode getEnterPoint(ListNode head) {
         ListNode slow = head;
         ListNode fast = head;
-        while (fast != null && fast != null){
+        while (fast != null && fast.next != null){
             slow = slow.next;
             fast = fast.next.next;
             if (slow == fast){
-                ListNode pointA = slow;
-                ListNode pointB = fast;
-                while (pointA != pointB){
+                ListNode pointA = fast;
+                // 注意这里是 head，而不是 slow
+                ListNode pointB = head;
+                while (pointB != pointA){
                     pointA = pointA.next;
                     pointB = pointB.next;
                 }

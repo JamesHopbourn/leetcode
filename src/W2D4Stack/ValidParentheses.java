@@ -34,7 +34,7 @@ public class ValidParentheses {
                 stack.push(']');
             } else {
                 // 注意这里要先判断一下是否为空 否则会报错空栈
-                if (stack.isEmpty() || aChar != stack.pop()) {
+                if (stack.isEmpty() || aChar != stack.peek()) {
                     return false;
                 }
             }
