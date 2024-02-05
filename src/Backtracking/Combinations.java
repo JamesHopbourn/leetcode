@@ -28,7 +28,6 @@ public class Combinations {
             path.add(i);
             backtracking(i+1, n, k);
             path.removeLast();
-
         }
     }
 }

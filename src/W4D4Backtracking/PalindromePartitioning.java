@@ -15,7 +15,7 @@ public class PalindromePartitioning {
     }
 
     List<List<String>> result = new ArrayList<>();
-    List<String> path = new LinkedList<>();
+    LinkedList<String> path = new LinkedList<>();
 
     public List<List<String>> partition(String s) {
         backtracking(s, 0);
@@ -24,8 +24,8 @@ public class PalindromePartitioning {
     
     public void backtracking(String s, int startIndex) {
         // 如果分割线位置大等于 s 长度收集结果
-        // 为什么不做回文串判断，因为下面的 continue 处理了不是回文串的情况
-        if (startIndex >= s.length()) {
+        // 为什么不做回文串判断，因为下面的隐式的 else 处理了不是回文串的情况
+        if (startIndex == s.length()) {
             result.add(new ArrayList(path));
             return;
         }
@@ -37,19 +37,17 @@ public class PalindromePartitioning {
                 // 为什么此处是 +1，因为要判断接下来一位是否能够判断回文
                 String substring = s.substring(startIndex, i + 1);
                 path.add(substring);
-            } else {
-                continue;
+                // 回溯
+                backtracking(s, i + 1);
+                // 删除
+                path.removeLast();
             }
-            // 回溯
-            backtracking(s, i + 1);
-            // 删除
-            path.remove(path.size()-1);
         }
     }
 
-    private boolean isPalindrome(String s, int startIndex, int end) {
-        for (int i = startIndex, j = end; i < j; i++, j--) {
-            if (s.charAt(i) != s.charAt(j)) {
+    private boolean isPalindrome(String s, int l, int r) {
+        while (l < r) {
+            if (s.charAt(l++) != s.charAt(r--)) {
                 return false;
             }
         }

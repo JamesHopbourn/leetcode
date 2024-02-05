@@ -27,7 +27,7 @@ public class CountCompleteTreeNodesDFS {
         int level = 0;
         Queue<TreeNode> queue = new LinkedList<>();
         queue.add(root);
-        while (!queue.isEmpty()){
+        while (!queue.isEmpty()){        
             TreeNode node = queue.poll();
             if (node.left != null){
                 queue.add(node.left);
