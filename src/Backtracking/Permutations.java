@@ -11,6 +11,7 @@ import java.util.List;
  */
 public class Permutations {
     public static void main(String[] args) {
+        System.out.println(-1 & -10);
         new Permutations().permute(new int[]{1, 2, 3}).forEach(System.out::println);
     }
 
@@ -27,11 +28,11 @@ public class Permutations {
             result.add(new ArrayList<>(track));
             return;
         }
-        for (int i = 0; i < nums.length; i++) {
-            if (track.contains(nums[i])){
+        for (int num : nums) {
+            if (track.contains(num)) {
                 continue;
             }
-            track.add(nums[i]);
+            track.add(num);
             backtracking(nums, track);
             track.removeLast();
         }
