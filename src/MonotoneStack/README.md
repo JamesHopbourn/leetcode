@@ -1,13 +1,14 @@
 #### 单调栈代码模版
+
 ```java
 class Solution {
     public int[] nextGreaterElements(int[] nums) {
-        int result[] = new int[nums.length];
-        // 根据情况决定是否要填充
-        Arrays.fill(result,-1);
+        int[] result = new int[nums.length];
+        // 根据情况决定是否要填充以及填充什么数字
+        Arrays.fill(result, -1);
 
-        for (int i = 0; i < nums.length; i++){
-            while (!stack.isEmpty() && nums[i] > nums[stack.peek()]){
+        for (int i = 0; i < nums.length; i++) {
+            while (!stack.isEmpty() && nums[i] > nums[stack.peek()]) {
                 // 具体代码逻辑......
             }
             stack.push(i);
@@ -19,11 +20,12 @@ class Solution {
 
 #### 739 每日温度
 ##### 正序暴力穷举
+
 ```java
 class Solution {
     public int[] dailyTemperatures(int[] temperatures) {
-        int result[] = new int[temperatures.length];
-        for(int i = 0; i < temperatures.length; i++) {
+        int[] result = new int[temperatures.length];
+        for (int i = 0; i < temperatures.length; i++) {
             for (int j = i + 1; j < temperatures.length; j++) {
                 if (temperatures[j] > temperatures[i]) {
                     result[i] = j - i;
@@ -37,11 +39,12 @@ class Solution {
 ```
 
 ##### 倒序暴力穷举
+
 ```java
 class Solution {
     public int[] dailyTemperatures(int[] temperatures) {
-        int result[] = new int[temperatures.length];
-        for(int i = temperatures.length - 1; i >= 1; i--) {
+        int[] result = new int[temperatures.length];
+        for (int i = temperatures.length - 1; i >= 1; i--) {
             for (int j = i - 1; j >= 0; j--) {
                 if (temperatures[i] > temperatures[j]) {
                     result[j] = i - j;
@@ -56,13 +59,14 @@ class Solution {
 ```
 
 ##### 引入单调栈
+
 ```java
 class Solution {
     public int[] dailyTemperatures(int[] temperatures) {
-        int result[] = new int[temperatures.length];
-        Stack<Integer> stack=new Stack<>();
-        for (int i = 0; i < temperatures.length; i++){
-            while (!stack.isEmpty() && temperatures[i] > temperatures[stack.peek()]){
+        int[] result = new int[temperatures.length];
+        Stack<Integer> stack = new Stack<>();
+        for (int i = 0; i < temperatures.length; i++) {
+            while (!stack.isEmpty() && temperatures[i] > temperatures[stack.peek()]) {
                 result[stack.peek()] = i - stack.peek();
                 stack.pop();
             }
@@ -103,19 +107,20 @@ class Solution {
 ```
 
 #### 503 下一个更大元素 II
+
 ```java
 class Solution {
     public int[] nextGreaterElements(int[] nums) {
-        int result[] = new int[nums.length];
-        Arrays.fill(result,-1);
+        int[] result = new int[nums.length];
+        Arrays.fill(result, -1);
         Deque<Integer> stack = new LinkedList<>();
         int size = nums.length;
-        for(int i = 0; i < size * 2; i++){
-            while(!stack.isEmpty() && nums[stack.peek()] < nums[i%size]){
-                result[stack.peek()] = nums[i%size];
+        for (int i = 0; i < size * 2; i++) {
+            while (!stack.isEmpty() && nums[stack.peek()] < nums[i % size]) {
+                result[stack.peek()] = nums[i % size];
                 stack.pop();
             }
-            stack.push(i%size);
+            stack.push(i % size);
         }
         return result;
     }
