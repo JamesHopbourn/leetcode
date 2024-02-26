@@ -17,7 +17,7 @@ class Solution {
 }
 ```
 
-#### 每日温度
+#### 739 每日温度
 ##### 正序暴力穷举
 ```java
 class Solution {
