@@ -143,3 +143,31 @@ class Solution {
     }
 }
 ```
+
+#### 84 柱状图中最大的矩形
+```java
+class Solution {
+    public int largestRectangleArea(int[] heights) {
+        int[] nums = new int[heights.length + 2];
+        Arrays.fill(nums, 0);
+        for (int i = 0; i < heights.length; i++){
+            nums[i+1] = heights[i];
+        }
+        Stack<Integer> stack = new Stack<>();
+        stack.push(0);
+        int result = 0;
+        for (int i = 1; i < nums.length; i++){
+            while (!stack.isEmpty() && nums[i] < nums[stack.peek()]){
+                int height = nums[stack.pop()];
+                int width = i - stack.peek() - 1;
+                result = Math.max(result, height * width);
+            }
+            stack.push(i);
+        }
+        return result;
+    }
+}
+```
+
+#### 参考资料
+- [高频算法面试题：每日温度（力扣 739）](https://www.bilibili.com/video/BV1sN4y1a7yz/)  
