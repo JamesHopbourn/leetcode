@@ -76,6 +76,100 @@ class Solution {
     }
 }
 ```
+#### 四个模版
+##### 右边下一个更大的元素
+```java
+import java.util.Arrays;
+import java.util.Stack;
+
+public class nextGreaterElement {
+    public static void main(String[] args) {
+        int[] nums = new int[]{6, 7, 4, 5, 2, 8};
+        int[] result = new int[nums.length];
+        Arrays.fill(result, -1);
+
+        Stack<Integer> stack = new Stack<>();
+        for (int i = 0; i < nums.length; i++) {
+            // > 下一个比他更大的元素 [7, 8, 5, 8, 8, -1]
+            while (!stack.isEmpty() && nums[i] > nums[stack.peek()]) {
+                result[stack.peek()] = nums[i];
+                stack.pop();
+            }
+            stack.push(i);
+        }
+        System.out.println(Arrays.toString(result));
+    }
+}
+```
+
+##### 右边下一个更小的元素
+```java
+import java.util.Arrays;
+import java.util.Stack;
+
+public class nextSmallerElement {
+    public static void main(String[] args) {
+        int[] nums = new int[]{6, 7, 4, 5, 2, 8};
+        int[] result = new int[nums.length];
+        Arrays.fill(result, -1);
+
+        Stack<Integer> stack = new Stack<>();
+        for (int i = 0; i < nums.length; i++) {
+            // < 下一个比他更小的元素 [4, 4, 2, 2, -1, -1]
+            while (!stack.isEmpty() && nums[i] < nums[stack.peek()]) {
+                result[stack.peek()] = nums[i];
+                stack.pop();
+            }
+            stack.push(i);
+        }
+        System.out.println(Arrays.toString(result));
+    }
+}
+```
+
+##### 左边下一个更小的元素索引
+```java
+public class prevSmallerElement {
+    public static void main(String[] args) {
+        int[] nums = new int[]{1, 2, 3, 4, 5, 6};
+        int[] result = new int[nums.length];
+        Stack<Integer> stack = new Stack<>();
+
+        for (int i = 0; i < nums.length; i++) {
+            // > 下一个比他更小的元素 [-1, 0, 1, 2, 3, 4]
+            while (!stack.isEmpty() && nums[stack.peek()] > nums[i]) {
+                stack.pop();
+            }
+            result[i] = stack.isEmpty() ? -1 : stack.peek();
+            stack.push(i);
+        }
+        System.out.println(Arrays.toString(result));
+    }
+}
+```
+
+##### 左边下一个更大的元素索引
+```java
+import java.util.Arrays;
+import java.util.Stack;
+
+public class prevGreaterElement {
+    public static void main(String[] args) {
+        int[] nums = new int[]{6, 5, 4, 3, 2, 1};
+        int[] result = new int[nums.length];
+        Stack<Integer> stack = new Stack<>();
+        // < 下一个比他更大的元素 [-1, 0, 1, 2, 3, 4]
+        for (int i = 0; i < nums.length; i++) {
+            while (!stack.isEmpty() && nums[stack.peek()] < nums[i]) {
+                result[i] = stack.pop();
+            }
+            result[i] = stack.isEmpty() ? -1 : stack.peek();
+            stack.push(i);
+        }
+        System.out.println(Arrays.toString(result));
+    }
+}
+```
 
 ---
 
