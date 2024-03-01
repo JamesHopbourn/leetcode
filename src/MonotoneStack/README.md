@@ -129,6 +129,9 @@ public class nextSmallerElement {
 
 ##### 左边下一个更小的元素索引
 ```java
+import java.util.Arrays;
+import java.util.Stack;
+
 public class prevSmallerElement {
     public static void main(String[] args) {
         int[] nums = new int[]{1, 2, 3, 4, 5, 6};
