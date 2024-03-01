@@ -6,7 +6,7 @@ class Solution {
         int[] result = new int[nums.length];
         // 根据情况决定是否要填充以及填充什么数字
         Arrays.fill(result, -1);
-
+        Stack<Integer> stack = new Stack<>();
         for (int i = 0; i < nums.length; i++) {
             while (!stack.isEmpty() && nums[i] > nums[stack.peek()]) {
                 // 具体代码逻辑......
