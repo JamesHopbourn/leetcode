@@ -16,7 +16,12 @@
 - [azl397985856/leetcode题解，记录自己的leetcode解题之路](https://github.com/azl397985856/leetcode)
 - [labuladong 的算法小抄](https://labuladong.github.io/algo/home/)
 - [代码随想录](https://programmercarl.com/)
-- [【labuladong】回溯算法核心套路详解_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV1P5411N7Xc/)  
+- [【labuladong】回溯算法核心套路详解_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV1P5411N7Xc/)
+
+#### 题目合集
+- [面试经典 150 题 - 学习计划 - 力扣（LeetCode）全球极客挚爱的技术成长平台](https://leetcode.cn/studyplan/top-interview-150/)
+- [LeetCode 热题 100 - 学习计划 - 力扣（LeetCode）全球极客挚爱的技术成长平台](https://leetcode.cn/studyplan/top-100-liked/)
+- [Krahets 笔面试精选 88 题 - 学习计划 - 力扣（LeetCode）全球极客挚爱的技术成长平台](https://leetcode.cn/studyplan/selected-coding-interview/)  
 
 #### 提高效率
 - IDEA 的对比功能配和 git checkout . 可以很好地帮助对比算法题中哪里写错了
